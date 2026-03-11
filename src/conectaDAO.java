@@ -16,18 +16,26 @@ import javax.swing.JOptionPane;
  * @author Adm
  */
 public class conectaDAO {
-    
+    Connection conn = null;
     public Connection connectDB(){
-        Connection conn = null;
-        
+      
         try {
         
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/uc11?user=root&password=");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/uc11","root", "2008");
+            JOptionPane.showMessageDialog(null, "Conexão com o Banco de dados foi bem sucedida");
             
         } catch (SQLException erro){
             JOptionPane.showMessageDialog(null, "Erro ConectaDAO" + erro.getMessage());
         }
         return conn;
     }
+    
+    public void desconectar(){
+      
+      try {
+      conn.close();
+      } 
+    catch (SQLException ex) { }
+  }
     
 }
