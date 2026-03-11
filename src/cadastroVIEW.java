@@ -158,7 +158,7 @@ public class cadastroVIEW extends javax.swing.JFrame {
         
         dao.cadastrarProduto(produto);
         
-        JOptionPane.showMessageDialog(null,"Dados incluidos com sucesso!");
+        JOptionPane.showMessageDialog(null,"Cadastro concluído com sucesso!");
         txtNome.setText("");
         fmtxtValor.setText("");
       }  

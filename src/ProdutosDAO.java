@@ -1,10 +1,10 @@
-
 import java.sql.PreparedStatement;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ProdutosDAO {
@@ -12,8 +12,6 @@ public class ProdutosDAO {
   Connection conn;
   PreparedStatement st;
   ResultSet rs;
-  
-  ArrayList<ProdutosDTO> listagem = new ArrayList<>();
   
   public int cadastrarProduto (ProdutosDTO produto){
     int status;
@@ -35,11 +33,44 @@ public class ProdutosDAO {
       return e.getErrorCode();
     }
   }
-    
-    public ArrayList<ProdutosDTO> listarProdutos(){
+  
+  public List<ProdutosDTO> getProdutos() {
+   conectaDAO conexao = new conectaDAO();
+   conn = conexao.conectar(); 
+    try {
+      st = conn.prepareStatement("SELECT * FROM produtos");
+      rs = st.executeQuery();
+      
+      List<ProdutosDTO> listaProdutos = new ArrayList<>();
+      
+      while (rs.next()) { 
+        ProdutosDTO produto = new ProdutosDTO();
         
-        return listagem;
+        produto.setId(rs.getInt("id"));
+        produto.setNome(rs.getString("nome"));
+        produto.setValor(rs.getInt("valor"));
+        produto.setStatus(rs.getString("status"));
+        listaProdutos.add(produto);
+      }
+      return listaProdutos;
     }
-        
+    catch (Exception e) {
+      return null;
+    }
+  }
+  
+  public void venderProduto (int id){
+    conectaDAO conexao = new conectaDAO();
+    conn = conexao.conectar();
+    
+    try {
+      st = conn.prepareStatement("UPDATE produtos SET status = 'Vendido' WHERE id=?",ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+      st.setInt(1, id);
+      st.executeUpdate();
+    }
+    catch (Exception e) {
+      JOptionPane.showMessageDialog(null,"Erro ao vender o produto: " + e.getMessage());
+    }
+  }
 }
 
