@@ -1,5 +1,4 @@
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -91,27 +90,32 @@ public class listagemVIEW extends javax.swing.JFrame {
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(layout.createSequentialGroup()
-        .addGap(47, 47, 47)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(layout.createSequentialGroup()
-            .addComponent(jLabel2)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(btnVender))
-          .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
-              .addComponent(btnVoltar)
-              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-              .addComponent(btnConsultVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        .addContainerGap(49, Short.MAX_VALUE))
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addComponent(jLabel1)
         .addGap(193, 193, 193))
+      .addGroup(layout.createSequentialGroup()
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+          .addGroup(layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(btnVoltar)
+            .addGap(18, 18, 18)
+            .addComponent(btnConsultVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+              .addContainerGap()
+              .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+              .addGap(47, 47, 47)
+              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createSequentialGroup()
+                  .addComponent(jLabel2)
+                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                  .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addGap(18, 18, 18)
+                  .addComponent(btnVender))))))
+        .addContainerGap(49, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,18 +124,18 @@ public class listagemVIEW extends javax.swing.JFrame {
         .addComponent(jLabel1)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(42, 42, 42)
+        .addGap(18, 18, 18)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jLabel2)
           .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(btnVender))
-        .addGap(29, 29, 29)
+        .addGap(18, 18, 18)
         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+        .addGap(18, 18, 18)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btnConsultVendas)
           .addComponent(btnVoltar))
-        .addGap(17, 17, 17))
+        .addContainerGap(25, Short.MAX_VALUE))
     );
 
     pack();
@@ -150,8 +154,8 @@ public class listagemVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVenderActionPerformed
 
     private void btnConsultVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultVendasActionPerformed
-        //vendasVIEW vendas = new vendasVIEW(); 
-        //vendas.setVisible(true);
+      vendasVIEW vendas = new vendasVIEW(); 
+      vendas.setVisible(true);
     }//GEN-LAST:event_btnConsultVendasActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
